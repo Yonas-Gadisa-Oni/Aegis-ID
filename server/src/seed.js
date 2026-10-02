@@ -1,0 +1,10 @@
+import dotenv from 'dotenv'; dotenv.config();
+import { query, pool } from './config/db.js';
+import { hashPassword } from './utils/auth.js';
+const users=[['admin@aegis.local','Admin123!','ADMIN'],['gateway@aegis.local','Gateway123!','GATEWAY'],['student@aegis.local','Student123!','STUDENT']];
+const ids={};
+for(const [email,password,role] of users){ const h=await hashPassword(password); const r=await query(`INSERT INTO users(email,password_hash,role) VALUES($1,$2,$3) ON CONFLICT(email) DO UPDATE SET password_hash=EXCLUDED.password_hash,role=EXCLUDED.role,status='ACTIVE' RETURNING id,email,role`,[email,h,role]); ids[role]=r.rows[0].id; }
+const students=[['EDU-2026-0001','Abel Tesfaye','MILITARY','Computer Science','Student Dormitory A'],['EDU-2026-0002','Hana Bekele','CIVILIAN','Information Systems','Student Dormitory B'],['EDU-2026-0003','Dawit Mekonnen','MILITARY','Cyber Security','Student Dormitory A'],['EDU-2026-0004','Meron Alemu','CIVILIAN','Software Engineering','Student Dormitory C']];
+for(const [sid,name,cat,dept,res] of students){ await query(`INSERT INTO students(user_id,student_id,full_name,email,category,department,residence,expiry_date) VALUES($1,$2,$3,$4,$5,$6,$7,CURRENT_DATE+INTERVAL '4 years') ON CONFLICT(student_id) DO UPDATE SET full_name=EXCLUDED.full_name,category=EXCLUDED.category,department=EXCLUDED.department,residence=EXCLUDED.residence`,[sid==='EDU-2026-0001'?ids.STUDENT:null,sid,name,sid==='EDU-2026-0001'?'student@aegis.local':`${sid.toLowerCase()}@example.local`,cat,dept,res]); }
+for(const [key,val,desc] of [['military_default_hours','24','Default military permission duration in hours'],['civilian_default_hours','48','Default civilian permission duration in hours']]) await query(`INSERT INTO system_settings(setting_key,setting_value,description,updated_by) VALUES($1,$2,$3,$4) ON CONFLICT(setting_key) DO UPDATE SET setting_value=EXCLUDED.setting_value`,[key,val,desc,ids.ADMIN]);
+console.log('Seed complete. Demo credentials: admin@aegis.local / Admin123!, gateway@aegis.local / Gateway123!, student@aegis.local / Student123!'); await pool.end();

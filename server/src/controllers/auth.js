@@ -1,0 +1,4 @@
+import { query } from '../config/db.js';
+import { comparePassword, signToken } from '../utils/auth.js';
+export async function login(req,res){ const {email,password}=req.body||{}; if(!email||!password) return res.status(400).json({message:'Email and password are required'}); const r=await query('SELECT id,email,password_hash,role,status FROM users WHERE lower(email)=lower($1)',[email]); const u=r.rows[0]; if(!u||u.status!=='ACTIVE'||!(await comparePassword(password,u.password_hash))) return res.status(401).json({message:'Invalid credentials'}); res.json({token:signToken(u),user:{id:u.id,email:u.email,role:u.role}}); }
+export async function me(req,res){ let student=null; if(req.user.role==='STUDENT'){ const r=await query('SELECT * FROM students WHERE user_id=$1',[req.user.id]); student=r.rows[0]||null; } res.json({user:req.user,student}); }
