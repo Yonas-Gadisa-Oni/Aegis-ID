@@ -1,6 +1,25 @@
 import pg from 'pg';
 import dotenv from 'dotenv';
+
 dotenv.config();
+
 const { Pool } = pg;
-export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-export const query = (text, params) => pool.query(text, params);
+
+const isRenderDatabase =
+  process.env.DATABASE_URL?.includes('render.com');
+
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+
+  ...(isRenderDatabase
+    ? {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      }
+    : {}),
+});
+
+export const query = (text, params) => {
+  return pool.query(text, params);
+};
