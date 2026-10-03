@@ -48,6 +48,20 @@ r.get(
   students.qr
 );
 
+r.patch(
+  '/students/:id',
+  auth,
+  allow('ADMIN', 'REGISTRAR'),
+  students.update
+);
+
+r.delete(
+  '/students/:id',
+  auth,
+  allow('ADMIN', 'REGISTRAR'),
+  students.remove
+);
+
 // Permissions
 
 r.get(

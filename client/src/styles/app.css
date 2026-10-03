@@ -1,3 +1,2700 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-:root{font-family:'DM Sans',sans-serif;color:#172033;background:#f4f7fb;font-synthesis:none;--navy:#0b1f3a;--blue:#1769e0;--line:#e3e9f2;--muted:#6d7890}*{box-sizing:border-box}body{margin:0;background:#f4f7fb}button,input,textarea{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}aside{width:260px;background:#091b34;color:#dce6f4;display:flex;flex-direction:column;padding:24px 16px;position:fixed;inset:0 auto 0 0}.brand{display:flex;align-items:center;gap:11px;padding:2px 10px 24px}.brand b{display:block;font-family:'Space Grotesk';letter-spacing:.08em}.brand small{display:block;font-size:9px;color:#8495ad;letter-spacing:.09em;margin-top:3px}.brand-mark{width:34px;height:34px;border-radius:10px;background:#fff;color:#0b1f3a;display:grid;place-items:center;font-weight:800;font-family:'Space Grotesk';font-size:19px}.brand.large .brand-mark{width:44px;height:44px;border-radius:13px}.brand.large b{font-size:20px}.profile{border:1px solid #213a5b;background:#0e2748;border-radius:14px;padding:12px;display:flex;gap:10px;align-items:center;margin-bottom:18px}.avatar{width:34px;height:34px;border-radius:50%;background:#2a5c99;color:#fff;display:grid;place-items:center;font-weight:700}.avatar.sm{width:36px;height:36px}.profile b,.person-row b{display:block;font-size:13px}.profile small,.person-row small,td small{display:block;color:#8491a6;font-size:11px;margin-top:3px}nav{display:flex;flex-direction:column;gap:4px}nav a{color:#9eafc5;text-decoration:none;padding:11px 12px;border-radius:10px;display:flex;gap:11px;align-items:center;font-size:13px}nav a:hover,nav a.active{background:#153253;color:#fff}.logout{margin-top:auto;background:transparent;border:1px solid #27415f;color:#aebbd0;border-radius:10px;padding:10px;display:flex;align-items:center;justify-content:center;gap:8px}.logout:hover{color:#fff}main{margin-left:260px;width:calc(100% - 260px)}header{height:78px;background:#fff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:0 34px;position:sticky;top:0;z-index:5}header h1{font:700 19px 'Space Grotesk';margin:3px 0 0}.eyebrow{font-size:10px;font-weight:700;letter-spacing:.13em;color:#70809a}.header-pill{font-size:12px;color:#53647d;background:#f3f7fc;border:1px solid var(--line);padding:8px 11px;border-radius:20px}.dot{display:inline-block;width:7px;height:7px;background:#21a66a;border-radius:50%;margin-right:7px}.content{padding:32px 34px;max-width:1450px}.page-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.page-title h2{font:700 29px 'Space Grotesk';margin:6px 0}.page-title p,.muted{margin:0;color:var(--muted);font-size:13px}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;display:flex;gap:13px;align-items:center}.stat-icon{width:38px;height:38px;border-radius:11px;background:#eef5ff;color:#1769e0;display:grid;place-items:center}.stat.success .stat-icon{background:#eaf8f0;color:#168451}.stat span{font-size:11px;color:#77849a;display:block}.stat strong{font:700 22px 'Space Grotesk';display:block;margin-top:3px}.grid-2,.gateway-grid,.monitor-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px}.panel h3{font:600 16px 'Space Grotesk';margin:0}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.panel-head a{font-size:12px;color:var(--blue);text-decoration:none}.detail-list>div{padding:13px 0;border-top:1px solid #edf1f6;display:flex;justify-content:space-between;gap:20px}.detail-list span{color:var(--muted);font-size:12px}.detail-list b{font-size:12px;text-align:right}.empty{padding:32px;text-align:center;color:#8390a4;font-size:13px;background:#f8fafc;border-radius:12px}.empty.tall{min-height:420px;display:grid;place-items:center}.quick-actions{display:grid;gap:10px}.quick-actions a{border:1px solid var(--line);border-radius:11px;padding:14px;text-decoration:none;color:#1d2b42;font-weight:600;font-size:13px}.quick-actions a:hover{border-color:#b9cbe5;background:#f7faff}.badge,.campus,.action{font-size:10px;font-weight:700;letter-spacing:.04em;border-radius:20px;padding:5px 8px;display:inline-block}.badge.pending{background:#fff5db;color:#9b6b00}.badge.approved,.badge.active,.badge.completed{background:#e8f8ef;color:#14784b}.badge.denied,.badge.expired{background:#ffe9e9;color:#b42e2e}.badge.cancelled{background:#eef1f5;color:#68758a}.campus.inside{background:#e8f8ef;color:#14784b}.campus.outside{background:#fff1df;color:#a85b00}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;color:#7b879a;font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:10px;border-bottom:1px solid var(--line);white-space:nowrap}td{padding:13px 10px;border-bottom:1px solid #eef1f5;vertical-align:middle}tr:last-child td{border-bottom:0}.actions{display:flex;gap:7px}.success-btn,.danger-btn,.secondary,.primary{border:0;border-radius:9px;padding:8px 11px;font-weight:600;font-size:11px}.success-btn{background:#e5f7ed;color:#137548}.danger-btn{background:#ffebeb;color:#ad3030}.secondary{background:#edf2f8;color:#30415a}.primary{background:#1769e0;color:#fff;padding:11px 15px}.primary:hover{background:#0f59c4}.full{width:100%;margin-top:5px}.stack{display:grid;gap:15px}label{display:grid;gap:7px;font-size:12px;font-weight:600;color:#46546b}input,textarea{border:1px solid #d9e1ec;border-radius:9px;padding:11px 12px;outline:none;background:#fff;color:#18263b}input:focus,textarea:focus{border-color:#7ca8e9;box-shadow:0 0 0 3px #eaf2ff}.notice,.error{padding:11px 12px;border-radius:9px;font-size:12px}.notice{background:#eef7ff;color:#2e5b8f}.error{background:#ffeded;color:#a02c2c}.toolbar{display:flex;gap:8px;margin-bottom:16px}.toolbar input{flex:1;max-width:420px}.alert-list,.notice-list{display:grid;gap:10px}.alert-item,.notice-row{padding:14px;border:1px solid var(--line);border-radius:12px;display:flex;justify-content:space-between;gap:15px;align-items:center}.alert-item p,.notice-row p{font-size:12px;color:#657289;margin:5px 0}.alert-item small,.notice-row small{color:#8a96a8;font-size:10px}.notice-row.read{opacity:.65}.action.entry{background:#e7f8ee;color:#14784b}.action.exit{background:#fff1df;color:#a85b00}.id-wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:22px}.id-card{background:linear-gradient(135deg,#0b1f3a,#17375d);border-radius:22px;color:#fff;padding:24px;min-height:350px;box-shadow:0 18px 50px #0b1f3a22}.id-top{display:flex;align-items:center;gap:11px;border-bottom:1px solid #ffffff24;padding-bottom:17px}.id-top b{font:600 13px 'Space Grotesk';letter-spacing:.05em}.id-top small{display:block;font-size:9px;color:#aab9cc;margin-top:3px}.brand-mark.small{width:31px;height:31px;font-size:16px}.id-body{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center;padding:25px 0}.photo{width:110px;height:125px;background:#dce8f6;color:#14385e;border-radius:13px;display:grid;place-items:center;font:700 42px 'Space Grotesk'}.id-body strong{display:block;font:600 21px 'Space Grotesk';margin:5px 0 18px}.id-label{display:block;font-size:8px;letter-spacing:.12em;color:#9db0c8;font-weight:700}.id-row{display:flex;gap:50px}.id-row b{font-size:12px;display:block;margin-top:4px}.id-bottom{border-top:1px solid #ffffff24;padding-top:15px;display:flex;justify-content:space-between;font-size:10px;color:#aab9cc}.qr-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.qr-card h3{font:600 20px 'Space Grotesk';margin:7px 0}.qr-card p{font-size:12px;color:var(--muted);max-width:340px}.qr-card code{margin-top:13px;background:#f1f5f9;padding:6px 9px;border-radius:6px;color:#54637a}.monitor-grid .panel{min-height:300px}.person-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #edf1f6}.person-row>div:nth-child(2){flex:1}.person-row:last-child{border-bottom:0}.login-page{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr}.login-hero{background:#091b34;color:#fff;padding:55px 7vw;display:flex;flex-direction:column}.login-hero .brand{padding:0}.hero-copy{max-width:600px;margin:auto 0}.hero-copy h1{font:700 clamp(44px,5vw,72px)/.98 'Space Grotesk';letter-spacing:-.04em;margin:15px 0 20px}.hero-copy p{font-size:17px;line-height:1.7;color:#b5c3d5;max-width:520px}.hero-footer{display:flex;gap:25px;color:#8fa3bc;font-size:12px}.hero-footer span{display:flex;gap:7px;align-items:center}.login-panel{display:grid;place-items:center;background:#fff;padding:30px}.login-panel form{width:min(410px,100%)}.login-panel h2{font:700 32px 'Space Grotesk';margin:7px 0}.login-panel label{margin-top:17px}.demo{margin-top:18px;padding:12px;border:1px solid var(--line);background:#f8fafc;border-radius:10px;display:grid;gap:4px;font-size:10px;color:#69778d}.access{text-align:center;padding:20px;border-radius:14px}.access.granted{background:#eaf8f0;color:#14784b}.access.denied{background:#ffeded;color:#ad3030}.result-icon{width:55px;height:55px;border-radius:50%;background:#fff;display:grid;place-items:center;font:700 25px 'Space Grotesk';margin:0 auto 10px}.access span{font-size:11px;font-weight:800;letter-spacing:.1em}.access h3{font:600 24px 'Space Grotesk';margin:7px 0}.access p{font-size:12px}.actions.big{justify-content:center;margin-top:15px}.scanner #qr-reader{border:0!important}.scanner #qr-reader__dashboard_section_csr button{background:#1769e0!important;color:#fff!important;border:0!important;border-radius:7px!important;padding:7px 10px!important}.manual{display:flex;gap:7px;margin-top:12px}.manual input{flex:1}.loading{min-height:100vh;display:grid;place-items:center;font:600 18px 'Space Grotesk'}
-@media(max-width:1050px){.stats-grid{grid-template-columns:repeat(2,1fr)}.id-wrap,.gateway-grid,.monitor-grid{grid-template-columns:1fr}.login-page{grid-template-columns:1fr}.login-hero{min-height:45vh}.hero-copy{margin:60px 0 30px}}@media(max-width:760px){aside{width:76px;padding:18px 9px}.brand>div:last-child,.profile>div:last-child,nav a:not(.active)::after,nav a{font-size:0}nav a{justify-content:center}nav a svg{font-size:18px}nav a.active{font-size:0}main{margin-left:76px;width:calc(100% - 76px)}header{padding:0 17px}.content{padding:22px 16px}.stats-grid{grid-template-columns:1fr 1fr}.grid-2{grid-template-columns:1fr}.page-title h2{font-size:24px}.id-body{grid-template-columns:80px 1fr}.photo{width:80px;height:95px}.id-body strong{font-size:16px}.id-row{gap:15px}.hero-footer{flex-direction:column;gap:9px}}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  font-family:
+    'DM Sans',
+    'Noto Sans Ethiopic',
+    sans-serif;
+
+  color: #172033;
+  background: #f4f7fb;
+  font-synthesis: none;
+
+  --navy: #0b1f3a;
+  --blue: #1769e0;
+  --line: #e3e9f2;
+  --muted: #6d7890;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family:
+    'DM Sans',
+    'Noto Sans Ethiopic',
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+aside {
+  width: 260px;
+  background: #091b34;
+  color: #dce6f4;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  position: fixed;
+  inset: 0 auto 0 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 2px 10px 24px;
+}
+
+.brand b {
+  display: block;
+  font-family: 'Space Grotesk';
+  letter-spacing: 0.08em;
+}
+
+.brand small {
+  display: block;
+  font-size: 9px;
+  color: #8495ad;
+  letter-spacing: 0.09em;
+  margin-top: 3px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #fff;
+  color: #0b1f3a;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-family: 'Space Grotesk';
+  font-size: 19px;
+}
+
+.brand.large .brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+}
+
+.brand.large b {
+  font-size: 20px;
+}
+
+.profile {
+  border: 1px solid #213a5b;
+  background: #0e2748;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2a5c99;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.avatar.sm {
+  width: 36px;
+  height: 36px;
+}
+
+.profile b,
+.person-row b {
+  display: block;
+  font-size: 13px;
+}
+
+.profile small,
+.person-row small,
+td small {
+  display: block;
+  color: #8491a6;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+nav a {
+  color: #9eafc5;
+  text-decoration: none;
+  padding: 11px 12px;
+  border-radius: 10px;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  font-size: 13px;
+}
+
+nav a:hover,
+nav a.active {
+  background: #153253;
+  color: #fff;
+}
+
+.logout {
+  margin-top: auto;
+  background: transparent;
+  border: 1px solid #27415f;
+  color: #aebbd0;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logout:hover {
+  color: #fff;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
+
+header {
+  height: 78px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 34px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+header h1 {
+  font: 700 19px 'Space Grotesk';
+  margin: 3px 0 0;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: #70809a;
+}
+
+.header-pill {
+  font-size: 12px;
+  color: #53647d;
+  background: #f3f7fc;
+  border: 1px solid var(--line);
+  padding: 8px 11px;
+  border-radius: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #21a66a;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.content {
+  padding: 32px 34px;
+  max-width: 1450px;
+}
+
+.page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.page-title h2 {
+  font: 700 29px 'Space Grotesk';
+  margin: 6px 0;
+}
+
+.page-title p,
+.muted {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   GENERAL COMPONENTS
+   ========================================================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 17px;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #eef5ff;
+  color: #1769e0;
+  display: grid;
+  place-items: center;
+}
+
+.stat.success .stat-icon {
+  background: #eaf8f0;
+  color: #168451;
+}
+
+.stat span {
+  font-size: 11px;
+  color: #77849a;
+  display: block;
+}
+
+.stat strong {
+  font: 700 22px 'Space Grotesk';
+  display: block;
+  margin-top: 3px;
+}
+
+.grid-2,
+.gateway-grid,
+.monitor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.panel h3 {
+  font: 600 16px 'Space Grotesk';
+  margin: 0;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.panel-head a {
+  font-size: 12px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.detail-list > div {
+  padding: 13px 0;
+  border-top: 1px solid #edf1f6;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.detail-list span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.detail-list b {
+  font-size: 12px;
+  text-align: right;
+}
+
+.empty {
+  padding: 32px;
+  text-align: center;
+  color: #8390a4;
+  font-size: 13px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.empty.tall {
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+}
+
+.quick-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.quick-actions a {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 14px;
+  text-decoration: none;
+  color: #1d2b42;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.quick-actions a:hover {
+  border-color: #b9cbe5;
+  background: #f7faff;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge,
+.campus,
+.action {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 20px;
+  padding: 5px 8px;
+  display: inline-block;
+}
+
+.badge.pending {
+  background: #fff5db;
+  color: #9b6b00;
+}
+
+.badge.approved,
+.badge.active,
+.badge.completed {
+  background: #e8f8ef;
+  color: #14784b;
+}
+
+.badge.denied,
+.badge.expired {
+  background: #ffe9e9;
+  color: #b42e2e;
+}
+
+.badge.cancelled {
+  background: #eef1f5;
+  color: #68758a;
+}
+
+.campus.inside {
+  background: #e8f8ef;
+  color: #14784b;
+}
+
+.campus.outside {
+  background: #fff1df;
+  color: #a85b00;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th {
+  text-align: left;
+  color: #7b879a;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+td {
+  padding: 13px 10px;
+  border-bottom: 1px solid #eef1f5;
+  vertical-align: middle;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 7px;
+}
+
+.success-btn,
+.danger-btn,
+.secondary,
+.primary {
+  border: 0;
+  border-radius: 9px;
+  padding: 8px 11px;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.success-btn {
+  background: #e5f7ed;
+  color: #137548;
+}
+
+.danger-btn {
+  background: #ffebeb;
+  color: #ad3030;
+}
+
+.secondary {
+  background: #edf2f8;
+  color: #30415a;
+}
+
+.primary {
+  background: #1769e0;
+  color: #fff;
+  padding: 11px 15px;
+}
+
+.primary:hover {
+  background: #0f59c4;
+}
+
+.full {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.stack {
+  display: grid;
+  gap: 15px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #46546b;
+}
+
+input,
+textarea {
+  border: 1px solid #d9e1ec;
+  border-radius: 9px;
+  padding: 11px 12px;
+  outline: none;
+  background: #fff;
+  color: #18263b;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #7ca8e9;
+  box-shadow: 0 0 0 3px #eaf2ff;
+}
+
+.notice,
+.error {
+  padding: 11px 12px;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+.notice {
+  background: #eef7ff;
+  color: #2e5b8f;
+}
+
+.error {
+  background: #ffeded;
+  color: #a02c2c;
+}
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.toolbar input {
+  flex: 1;
+  max-width: 420px;
+}
+
+.alert-list,
+.notice-list {
+  display: grid;
+  gap: 10px;
+}
+
+.alert-item,
+.notice-row {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+.alert-item p,
+.notice-row p {
+  font-size: 12px;
+  color: #657289;
+  margin: 5px 0;
+}
+
+.alert-item small,
+.notice-row small {
+  color: #8a96a8;
+  font-size: 10px;
+}
+
+.notice-row.read {
+  opacity: 0.65;
+}
+
+.action.entry {
+  background: #e7f8ee;
+  color: #14784b;
+}
+
+.action.exit {
+  background: #fff1df;
+  color: #a85b00;
+}
+
+/* =========================================================
+   OLD ID CARD
+   ========================================================= */
+
+.id-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: 22px;
+}
+
+.id-card {
+  background: linear-gradient(135deg, #0b1f3a, #17375d);
+  border-radius: 22px;
+  color: #fff;
+  padding: 24px;
+  min-height: 350px;
+  box-shadow: 0 18px 50px #0b1f3a22;
+}
+
+.id-top {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-bottom: 1px solid #ffffff24;
+  padding-bottom: 17px;
+}
+
+.id-top b {
+  font: 600 13px 'Space Grotesk';
+  letter-spacing: 0.05em;
+}
+
+.id-top small {
+  display: block;
+  font-size: 9px;
+  color: #aab9cc;
+  margin-top: 3px;
+}
+
+.brand-mark.small {
+  width: 31px;
+  height: 31px;
+  font-size: 16px;
+}
+
+.id-body {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.photo {
+  width: 110px;
+  height: 125px;
+  background: #dce8f6;
+  color: #14385e;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  font: 700 42px 'Space Grotesk';
+}
+
+.id-body strong {
+  display: block;
+  font: 600 21px 'Space Grotesk';
+  margin: 5px 0 18px;
+}
+
+.id-label {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #9db0c8;
+  font-weight: 700;
+}
+
+.id-row {
+  display: flex;
+  gap: 50px;
+}
+
+.id-row b {
+  font-size: 12px;
+  display: block;
+  margin-top: 4px;
+}
+
+.id-bottom {
+  border-top: 1px solid #ffffff24;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #aab9cc;
+}
+
+.qr-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.qr-card h3 {
+  font: 600 20px 'Space Grotesk';
+  margin: 7px 0;
+}
+
+.qr-card p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 340px;
+}
+
+.qr-card code {
+  margin-top: 13px;
+  background: #f1f5f9;
+  padding: 6px 9px;
+  border-radius: 6px;
+  color: #54637a;
+}
+
+/* =========================================================
+   MONITOR
+   ========================================================= */
+
+.monitor-grid .panel {
+  min-height: 300px;
+}
+
+.person-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.person-row > div:nth-child(2) {
+  flex: 1;
+}
+
+.person-row:last-child {
+  border-bottom: 0;
+}
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.login-hero {
+  background: #091b34;
+  color: #fff;
+  padding: 55px 7vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-hero .brand {
+  padding: 0;
+}
+
+.hero-copy {
+  max-width: 600px;
+  margin: auto 0;
+}
+
+.hero-copy h1 {
+  font: 700 clamp(44px, 5vw, 72px) / 0.98 'Space Grotesk';
+  letter-spacing: -0.04em;
+  margin: 15px 0 20px;
+}
+
+.hero-copy p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #b5c3d5;
+  max-width: 520px;
+}
+
+.hero-footer {
+  display: flex;
+  gap: 25px;
+  color: #8fa3bc;
+  font-size: 12px;
+}
+
+.hero-footer span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.login-panel {
+  display: grid;
+  place-items: center;
+  background: #fff;
+  padding: 30px;
+}
+
+.login-panel form {
+  width: min(410px, 100%);
+}
+
+.login-panel h2 {
+  font: 700 32px 'Space Grotesk';
+  margin: 7px 0;
+}
+
+.login-panel label {
+  margin-top: 17px;
+}
+
+.demo {
+  margin-top: 18px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: #f8fafc;
+  border-radius: 10px;
+  display: grid;
+  gap: 4px;
+  font-size: 10px;
+  color: #69778d;
+}
+
+/* =========================================================
+   GATEWAY
+   ========================================================= */
+
+.access {
+  text-align: center;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.access.granted {
+  background: #eaf8f0;
+  color: #14784b;
+}
+
+.access.denied {
+  background: #ffeded;
+  color: #ad3030;
+}
+
+.result-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font: 700 25px 'Space Grotesk';
+  margin: 0 auto 10px;
+}
+
+.access span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.access h3 {
+  font: 600 24px 'Space Grotesk';
+  margin: 7px 0;
+}
+
+.access p {
+  font-size: 12px;
+}
+
+.actions.big {
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.scanner #qr-reader {
+  border: 0 !important;
+}
+
+.scanner #qr-reader__dashboard_section_csr button {
+  background: #1769e0 !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 7px !important;
+  padding: 7px 10px !important;
+}
+
+.manual {
+  display: flex;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.manual input {
+  flex: 1;
+}
+
+.loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font: 600 18px 'Space Grotesk';
+}
+
+/* =========================================================
+   AEGIS DIGITAL ID PAGE
+   ========================================================= */
+
+.digital-id-page {
+  font-family:
+    'DM Sans',
+    'Noto Sans Ethiopic',
+    sans-serif;
+}
+
+.digital-id-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.digital-id-label {
+  width: min(850px, 100%);
+  margin: 0 auto 12px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #596b80;
+}
+
+/* =========================================================
+   PHYSICAL CARD
+   ========================================================= */
+
+.aegis-print-card {
+  width: min(850px, 100%);
+  aspect-ratio: 85.6 / 53.98;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 32px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: #0b1f3a;
+  color: #fff;
+  box-shadow: 0 20px 55px rgba(11, 31, 58, 0.22);
+}
+
+/* =========================================================
+   FRONT
+   ========================================================= */
+
+.aegis-front-card {
+  display: grid;
+  grid-template-rows: 20% 68% 12%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b1f3a 0%,
+      #102e50 58%,
+      #0a2039 100%
+    );
+}
+
+.aegis-front-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 30px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.aegis-card-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.aegis-card-logo {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #fff;
+  color: #0b1f3a;
+
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.aegis-card-brand-name {
+  font-family: 'Space Grotesk';
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  line-height: 1.1;
+}
+
+.aegis-card-brand-subtitle {
+  margin-top: 5px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.35;
+
+  color: #b8c8da;
+}
+
+.aegis-edu-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  min-width: 0;
+}
+
+.aegis-edu-heading strong {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+}
+
+.aegis-edu-heading span {
+  margin-top: 4px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  color: #b9c9da;
+}
+
+.aegis-edu-heading small {
+  margin-top: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  color: #9db1c7;
+}
+
+/* =========================================================
+   FRONT MAIN
+   ========================================================= */
+
+.aegis-front-main {
+  display: grid;
+
+  /*
+    Large photo on the left.
+  */
+
+  grid-template-columns: 195px minmax(0, 1fr);
+
+  gap: 28px;
+
+  align-items: center;
+
+  padding: 8px 30px 10px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.aegis-photo-column {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.aegis-photo-large {
+  width: 185px;
+  height: 218px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  background: #dbe7f3;
+
+  border: 3px solid rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.aegis-photo-large img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.aegis-photo-letter {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #dbe7f3;
+
+  color: #173b61;
+
+  font-family: 'Space Grotesk';
+
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.aegis-photo-strip {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  min-height: 32px;
+
+  padding: 5px 4px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: rgba(7, 25, 45, 0.92);
+
+  color: #fff;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    sans-serif;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.25px;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   IMPORTANT:
+   NAME AND STUDENT ID ARE NOW DIRECT GRID ITEMS
+   ========================================================= */
+
+.aegis-identity-column {
+  min-width: 0;
+
+  width: 100%;
+
+  /*
+    THIS is the important fix.
+
+    The Name and Student ID are direct children
+    of this container in your current JSX.
+
+    Therefore we make THIS container a grid.
+  */
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(165px, 0.75fr);
+
+  grid-template-rows:
+    auto
+    auto
+    auto
+    auto;
+
+  column-gap: 38px;
+
+  align-content: center;
+
+  height: 100%;
+}
+
+/* =========================================================
+   NAME - LEFT
+   ========================================================= */
+
+.aegis-primary-name {
+  grid-column: 1;
+  grid-row: 1;
+
+  min-width: 0;
+
+  align-self: end;
+}
+
+.aegis-primary-name span,
+.aegis-student-number span,
+.aegis-front-field span,
+.aegis-date-row span {
+  display: block;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.45px;
+
+  line-height: 1.35;
+
+  text-transform: uppercase;
+
+  color: #a4b7ca;
+}
+
+.aegis-primary-name strong {
+  display: block;
+
+  margin-top: 4px;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-family: 'Space Grotesk';
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.2px;
+
+  color: #fff;
+}
+
+/* =========================================================
+   STUDENT ID - RIGHT
+   ========================================================= */
+
+.aegis-student-number {
+  grid-column: 2;
+  grid-row: 1;
+
+  min-width: 0;
+
+  margin-top: 0;
+
+  padding-left: 0;
+
+  align-self: end;
+}
+
+.aegis-student-number strong {
+  display: block;
+
+  margin-top: 4px;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-family: 'Space Grotesk';
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.45px;
+
+  line-height: 1.1;
+
+  color: #fff;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.aegis-front-divider {
+  grid-column: 1 / -1;
+  grid-row: 2;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin: 8px 0 9px;
+
+  background: rgba(255, 255, 255, 0.17);
+}
+
+/* =========================================================
+   FRONT FIELDS
+   ========================================================= */
+
+.aegis-front-fields {
+  grid-column: 1 / -1;
+  grid-row: 3;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  column-gap: 30px;
+
+  row-gap: 8px;
+
+  min-width: 0;
+}
+
+.aegis-front-field {
+  min-width: 0;
+}
+
+.aegis-front-field strong {
+  display: block;
+
+  margin-top: 3px;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-family:
+    'DM Sans',
+    'Noto Sans Ethiopic',
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  color: #f5f8fc;
+}
+
+/* Resident address spans both columns */
+
+.aegis-address-field {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   REMOVE STATUS FROM PHYSICAL CARD
+   ========================================================= */
+
+/*
+   If JSX gives the status field this class,
+   it will definitely disappear from the physical card.
+*/
+
+.aegis-status-field {
+  display: none !important;
+}
+
+/*
+   Current field order also places Status as item 7.
+   This hides it from the physical card.
+*/
+
+.aegis-front-fields .aegis-front-field:nth-child(7) {
+  display: none !important;
+}
+
+/* =========================================================
+   DATE ROW
+   ========================================================= */
+
+.aegis-date-row {
+  grid-column: 1 / -1;
+  grid-row: 4;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 30px;
+
+  margin-top: 7px;
+
+  padding-top: 7px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+}
+
+.aegis-date-row strong {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family:
+    'DM Sans',
+    'Noto Sans Ethiopic',
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  color: #f5f8fc;
+}
+
+/* =========================================================
+   FRONT FOOTER
+   ========================================================= */
+
+.aegis-front-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 0 30px;
+
+  position: relative;
+
+  z-index: 3;
+
+  background: rgba(4, 16, 30, 0.35);
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+.aegis-security-mark {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.aegis-security-mark span {
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+
+  color: #c0cedd;
+}
+
+.aegis-card-validity {
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+
+  color: #c0cedd;
+}
+
+.aegis-watermark {
+  position: absolute;
+
+  right: 25px;
+
+  bottom: 38px;
+
+  font-family: 'Space Grotesk';
+
+  font-size: 130px;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   BACK
+   ========================================================= */
+
+.aegis-back-card {
+  display: grid;
+
+  grid-template-rows:
+    18%
+    67%
+    15%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b1f3a 0%,
+      #102e50 58%,
+      #0a2039 100%
+    );
+}
+
+.aegis-back-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 0 30px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+.aegis-back-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.aegis-back-logo {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #fff;
+
+  color: #0b1f3a;
+
+  font-size: 21px;
+
+  font-weight: 800;
+}
+
+.aegis-back-brand strong {
+  display: block;
+
+  font-family: 'Space Grotesk';
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+.aegis-back-brand span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  color: #b5c6d9;
+}
+
+.aegis-back-card-type {
+  max-width: 250px;
+
+  text-align: right;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  color: #c0cedd;
+}
+
+/* =========================================================
+   BACK MAIN
+   ========================================================= */
+
+.aegis-back-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    220px;
+
+  gap: 22px;
+
+  align-items: center;
+
+  padding: 6px 30px;
+}
+
+.aegis-back-details {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.aegis-back-section,
+.aegis-emergency,
+.aegis-university-info {
+  min-width: 0;
+}
+
+.aegis-back-section-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 6px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
+
+  line-height: 1.4;
+
+  color: #a9bbcf;
+}
+
+.aegis-back-contact-grid,
+.aegis-emergency-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 16px;
+}
+
+.aegis-back-contact-grid span,
+.aegis-emergency-grid span {
+  display: block;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+
+  color: #9bb0c5;
+}
+
+.aegis-back-contact-grid strong,
+.aegis-emergency-grid strong {
+  display: block;
+
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  color: #f4f7fb;
+}
+
+.aegis-university-info {
+  padding-top: 8px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+}
+
+.aegis-university-info > strong {
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+}
+
+.aegis-university-info > span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+
+  color: #b8c7d8;
+}
+
+/* =========================================================
+   QR
+   ========================================================= */
+
+.aegis-back-qr {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.aegis-qr-label {
+  max-width: 210px;
+
+  margin-bottom: 5px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  color: #c7d3df;
+}
+
+.aegis-qr-box {
+  background: #fff;
+}
+
+.aegis-qr-box-large {
+  width: 190px;
+  height: 190px;
+
+  padding: 4px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border-radius: 6px;
+}
+
+.aegis-qr-box-large svg {
+  display: block;
+
+  width: 182px;
+  height: 182px;
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.aegis-qr-loading {
+  color: #75849a;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  text-align: center;
+
+  line-height: 1.4;
+}
+
+.aegis-back-qr > strong {
+  margin-top: 5px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  color: #f3f7fb;
+}
+
+.aegis-back-qr > span {
+  max-width: 210px;
+
+  margin-top: 3px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+
+  color: #b4c3d3;
+}
+
+/* =========================================================
+   BACK FOOTER
+   ========================================================= */
+
+.aegis-back-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 0 30px;
+
+  background: rgba(4, 16, 30, 0.35);
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+.aegis-back-instruction {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.aegis-back-instruction > div {
+  min-width: 0;
+}
+
+.aegis-back-instruction strong {
+  display: block;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  color: #e4ebf3;
+}
+
+.aegis-back-instruction span {
+  display: block;
+
+  max-width: 420px;
+
+  margin-top: 2px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 7px;
+
+  line-height: 1.4;
+
+  color: #9db0c4;
+}
+
+.aegis-back-validity {
+  text-align: right;
+}
+
+.aegis-back-validity > div {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 4px;
+}
+
+.aegis-back-validity span {
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  color: #a9bbce;
+}
+
+.aegis-back-validity > strong {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  color: #f0f4f8;
+}
+
+/* =========================================================
+   DIGITAL INFORMATION PANEL
+   ========================================================= */
+
+.aegis-identity-panel {
+  margin-top: 10px;
+}
+
+.aegis-details-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.aegis-details-grid > div {
+  min-width: 0;
+
+  padding: 14px;
+
+  background: #f8fafc;
+
+  border: 1px solid #edf1f6;
+
+  border-radius: 10px;
+}
+
+.aegis-details-grid span {
+  display: block;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  color: #7a879a;
+}
+
+.aegis-details-grid strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+
+  color: #172033;
+
+  overflow-wrap: anywhere;
+}
+
+.aegis-info-note {
+  margin-top: 15px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  padding: 13px;
+
+  border-radius: 10px;
+
+  background: #eef7ff;
+
+  color: #2e5b8f;
+}
+
+.aegis-info-note span {
+  font-family:
+    'Noto Sans Ethiopic',
+    'DM Sans',
+    sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .id-wrap,
+  .gateway-grid,
+  .monitor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-hero {
+    min-height: 45vh;
+  }
+
+  .hero-copy {
+    margin: 60px 0 30px;
+  }
+
+  .aegis-print-card {
+    width: min(820px, 100%);
+  }
+
+  .digital-id-label {
+    width: min(820px, 100%);
+  }
+
+  .aegis-front-main {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .aegis-photo-large {
+    width: 170px;
+    height: 205px;
+  }
+
+  .aegis-identity-column {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(150px, 0.75fr);
+
+    column-gap: 28px;
+  }
+
+  .aegis-back-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      205px;
+  }
+
+  .aegis-qr-box-large {
+    width: 178px;
+    height: 178px;
+  }
+
+  .aegis-qr-box-large svg {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 900px) {
+  .aegis-front-main {
+    grid-template-columns: 155px minmax(0, 1fr);
+
+    gap: 20px;
+
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .aegis-photo-large {
+    width: 148px;
+    height: 190px;
+  }
+
+  .aegis-photo-letter {
+    font-size: 45px;
+  }
+
+  .aegis-front-top,
+  .aegis-front-bottom,
+  .aegis-back-top,
+  .aegis-back-bottom {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .aegis-identity-column {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(125px, 0.7fr);
+
+    column-gap: 22px;
+  }
+
+  .aegis-primary-name strong {
+    font-size: 23px;
+  }
+
+  .aegis-student-number strong {
+    font-size: 15px;
+  }
+
+  .aegis-front-field strong {
+    font-size: 11px;
+  }
+
+  .aegis-front-field span {
+    font-size: 8px;
+  }
+
+  .aegis-back-main {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .aegis-back-contact-grid strong,
+  .aegis-emergency-grid strong {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  aside {
+    width: 76px;
+    padding: 18px 9px;
+  }
+
+  .brand > div:last-child,
+  .profile > div:last-child {
+    display: none;
+  }
+
+  nav a {
+    justify-content: center;
+    font-size: 0;
+  }
+
+  nav a svg {
+    font-size: 18px;
+  }
+
+  main {
+    margin-left: 76px;
+    width: calc(100% - 76px);
+  }
+
+  header {
+    padding: 0 17px;
+  }
+
+  .content {
+    padding: 22px 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title h2 {
+    font-size: 24px;
+  }
+
+  .id-body {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .photo {
+    width: 80px;
+    height: 95px;
+  }
+
+  .id-body strong {
+    font-size: 16px;
+  }
+
+  .id-row {
+    gap: 15px;
+  }
+
+  .hero-footer {
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .digital-id-container {
+    overflow-x: auto;
+    padding-bottom: 14px;
+  }
+
+  .aegis-print-card {
+    width: 700px;
+  }
+
+  .digital-id-label {
+    width: 700px;
+  }
+
+  .aegis-front-main {
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    gap: 18px;
+  }
+
+  .aegis-photo-large {
+    width: 143px;
+    height: 185px;
+  }
+
+  .aegis-identity-column {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(105px, 0.75fr);
+
+    column-gap: 18px;
+  }
+
+  .aegis-primary-name strong {
+    font-size: 22px;
+  }
+
+  .aegis-student-number strong {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  aside,
+  header,
+  nav,
+  .page-title,
+  .digital-id-label,
+  .aegis-identity-panel,
+  .content > .toolbar,
+  button {
+    display: none !important;
+  }
+
+  main {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .digital-id-page {
+    width: 100%;
+    margin: 0;
+  }
+
+  .digital-id-container {
+    width: 100%;
+    max-width: none;
+    overflow: visible;
+  }
+
+  .aegis-print-card {
+    width: 85.6mm;
+    height: 53.98mm;
+
+    aspect-ratio: auto;
+
+    margin: 0 auto 8mm;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .aegis-front-top,
+  .aegis-front-bottom,
+  .aegis-back-top,
+  .aegis-back-bottom {
+    padding-left: 5mm;
+    padding-right: 5mm;
+  }
+
+  /* =======================================================
+     PRINT PHOTO
+     ======================================================= */
+
+  .aegis-front-main {
+    grid-template-columns: 30mm minmax(0, 1fr);
+
+    gap: 3.5mm;
+
+    padding: 1mm 5mm;
+  }
+
+  .aegis-photo-large {
+    width: 29mm;
+    height: 35mm;
+
+    border-width: 0.7mm;
+  }
+
+  .aegis-photo-letter {
+    font-size: 20pt;
+  }
+
+  .aegis-card-brand-name {
+    font-size: 8pt;
+  }
+
+  .aegis-card-brand-subtitle {
+    font-size: 4pt;
+  }
+
+  .aegis-edu-heading strong {
+    font-size: 5pt;
+  }
+
+  .aegis-edu-heading span {
+    font-size: 4pt;
+  }
+
+  /* =======================================================
+     PRINT NAME + ID
+     ======================================================= */
+
+  .aegis-identity-column {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(28mm, 0.75fr);
+
+    column-gap: 4mm;
+  }
+
+  .aegis-primary-name strong {
+    font-size: 10pt;
+  }
+
+  .aegis-student-number strong {
+    font-size: 6.5pt;
+  }
+
+  .aegis-primary-name span,
+  .aegis-student-number span,
+  .aegis-front-field span,
+  .aegis-date-row span {
+    font-size: 4.2pt;
+  }
+
+  .aegis-front-field strong {
+    font-size: 4.9pt;
+  }
+
+  .aegis-date-row strong {
+    font-size: 4.7pt;
+  }
+
+  .aegis-front-fields {
+    column-gap: 4mm;
+    row-gap: 1.2mm;
+  }
+
+  .aegis-date-row {
+    gap: 4mm;
+
+    margin-top: 1.4mm;
+
+    padding-top: 1.2mm;
+  }
+
+  .aegis-security-mark span,
+  .aegis-card-validity {
+    font-size: 4pt;
+  }
+
+  /* =======================================================
+     PRINT BACK
+     ======================================================= */
+
+  .aegis-back-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      40mm;
+
+    gap: 2.5mm;
+
+    padding: 1mm 5mm;
+  }
+
+  .aegis-back-brand strong {
+    font-size: 7pt;
+  }
+
+  .aegis-back-brand span {
+    font-size: 3.8pt;
+  }
+
+  .aegis-back-card-type {
+    font-size: 3.8pt;
+  }
+
+  .aegis-back-details {
+    gap: 2mm;
+  }
+
+  .aegis-back-section-heading {
+    font-size: 4pt;
+    margin-bottom: 1mm;
+  }
+
+  .aegis-back-contact-grid,
+  .aegis-emergency-grid {
+    gap: 3mm;
+  }
+
+  .aegis-back-contact-grid span,
+  .aegis-emergency-grid span {
+    font-size: 3.5pt;
+  }
+
+  .aegis-back-contact-grid strong,
+  .aegis-emergency-grid strong {
+    font-size: 4.3pt;
+  }
+
+  .aegis-university-info {
+    padding-top: 1.5mm;
+  }
+
+  .aegis-university-info > strong {
+    font-size: 4.6pt;
+  }
+
+  .aegis-university-info > span {
+    font-size: 3.6pt;
+  }
+
+  .aegis-qr-label {
+    font-size: 3.8pt;
+  }
+
+  .aegis-qr-box-large {
+    width: 38mm;
+    height: 38mm;
+    padding: 1mm;
+  }
+
+  .aegis-qr-box-large svg {
+    width: 36mm;
+    height: 36mm;
+  }
+
+  .aegis-back-qr > strong {
+    font-size: 3.8pt;
+  }
+
+  .aegis-back-qr > span {
+    font-size: 3.4pt;
+  }
+
+  .aegis-back-instruction strong,
+  .aegis-back-validity span {
+    font-size: 3.5pt;
+  }
+
+  .aegis-back-instruction span {
+    font-size: 3.2pt;
+  }
+
+  .aegis-back-validity > strong {
+    font-size: 3.7pt;
+  }
+}

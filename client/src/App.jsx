@@ -29,6 +29,7 @@ import Gateway from './pages/gateway/Dashboard';
 import Activity from './pages/gateway/Activity';
 
 import RegistrarDashboard from './pages/registrar/Dashboard';
+import StudentID from './pages/registrar/StudentID';
 
 import Notifications from './pages/Notifications';
 
@@ -87,15 +88,21 @@ export default function App() {
       <AuthProvider>
         <Routes>
 
+          {/* Login */}
+
           <Route
             path="/login"
             element={<Login />}
           />
 
+          {/* Home */}
+
           <Route
             path="/"
             element={<Home />}
           />
+
+          {/* Protected application layout */}
 
           <Route
             element={
@@ -105,7 +112,9 @@ export default function App() {
             }
           >
 
-            {/* Student */}
+            {/* =========================
+                STUDENT
+            ========================== */}
 
             <Route
               path="/student"
@@ -134,7 +143,9 @@ export default function App() {
               }
             />
 
-            {/* Admin */}
+            {/* =========================
+                ADMIN
+            ========================== */}
 
             <Route
               path="/admin"
@@ -190,7 +201,9 @@ export default function App() {
               }
             />
 
-            {/* Gateway */}
+            {/* =========================
+                GATEWAY
+            ========================== */}
 
             <Route
               path="/gateway"
@@ -214,7 +227,9 @@ export default function App() {
               }
             />
 
-            {/* Registrar */}
+            {/* =========================
+                REGISTRAR
+            ========================== */}
 
             <Route
               path="/registrar"
@@ -225,7 +240,18 @@ export default function App() {
               }
             />
 
-            {/* Notifications */}
+            <Route
+              path="/registrar/student-id"
+              element={
+                <Protected roles={['REGISTRAR']}>
+                  <StudentID />
+                </Protected>
+              }
+            />
+
+            {/* =========================
+                NOTIFICATIONS
+            ========================== */}
 
             <Route
               path="/notifications"
