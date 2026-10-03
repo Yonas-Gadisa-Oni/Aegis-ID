@@ -1,15 +1,13 @@
 import { QRCodeSVG } from 'qrcode.react';
+
 import {
   ShieldCheck,
   Phone,
   ScanLine,
   Building2,
   CalendarDays,
-  MapPin,
-  Droplets,
-  UserRound,
-  GraduationCap,
 } from 'lucide-react';
+
 
 function getStudentValue(student, ...keys) {
   for (const key of keys) {
@@ -26,8 +24,11 @@ function getStudentValue(student, ...keys) {
   return '';
 }
 
+
 function formatDate(value) {
-  if (!value) return 'Not provided';
+  if (!value) {
+    return 'Not provided';
+  }
 
   const date = new Date(value);
 
@@ -41,6 +42,7 @@ function formatDate(value) {
     year: 'numeric',
   });
 }
+
 
 function formatDateWithEthiopian(
   gregorian,
@@ -62,14 +64,16 @@ function formatDateWithEthiopian(
   return `${gregorianText} • ${year}/${month}/${day} E.C.`;
 }
 
+
 export default function StudentIDCard({
   student = {},
   qr = null,
   qrLoading = false,
 }) {
+
   /*
    * ============================================================
-   * IDENTITY
+   * BASIC STUDENT INFORMATION
    * ============================================================
    */
 
@@ -81,11 +85,14 @@ export default function StudentIDCard({
       'fullName'
     ) || 'Student Name';
 
+
   const fullNameAm =
     getStudentValue(
       student,
-      'full_name_am'
+      'full_name_am',
+      'fullNameAm'
     );
+
 
   const studentId =
     getStudentValue(
@@ -94,6 +101,7 @@ export default function StudentIDCard({
       'studentId'
     ) || 'Not provided';
 
+
   const categoryEn =
     getStudentValue(
       student,
@@ -101,17 +109,21 @@ export default function StudentIDCard({
       'category'
     ) || 'Not provided';
 
+
   const categoryAm =
     getStudentValue(
       student,
-      'category_am'
+      'category_am',
+      'categoryAm'
     );
+
 
   const department =
     getStudentValue(
       student,
       'department'
     ) || 'Not provided';
+
 
   const yearLevel =
     getStudentValue(
@@ -120,6 +132,7 @@ export default function StudentIDCard({
       'yearLevel'
     ) || 'Not provided';
 
+
   const genderEn =
     getStudentValue(
       student,
@@ -127,44 +140,37 @@ export default function StudentIDCard({
       'gender'
     ) || 'Not provided';
 
+
   const genderAm =
     getStudentValue(
       student,
-      'gender_am'
+      'gender_am',
+      'genderAm'
     );
+
 
   const bloodGroupEn =
     getStudentValue(
       student,
       'blood_group_en',
-      'blood_group'
+      'blood_group',
+      'bloodGroup'
     ) || 'Not provided';
+
 
   const bloodGroupAm =
     getStudentValue(
       student,
-      'blood_group_am'
+      'blood_group_am',
+      'bloodGroupAm'
     );
+
 
   /*
    * ============================================================
-   * ADDRESS / CONTACT
+   * CONTACT INFORMATION
    * ============================================================
    */
-
-  const residentAddressEn =
-    getStudentValue(
-      student,
-      'resident_address_en',
-      'resident_address',
-      'residence'
-    ) || 'Not provided';
-
-  const residentAddressAm =
-    getStudentValue(
-      student,
-      'resident_address_am'
-    );
 
   const phone =
     getStudentValue(
@@ -173,6 +179,7 @@ export default function StudentIDCard({
       'phone_number',
       'phoneNumber'
     ) || 'Not provided';
+
 
   /*
    * ============================================================
@@ -188,11 +195,14 @@ export default function StudentIDCard({
       'emergencyContactName'
     ) || 'Not provided';
 
+
   const emergencyNameAm =
     getStudentValue(
       student,
-      'emergency_contact_name_am'
+      'emergency_contact_name_am',
+      'emergencyContactNameAm'
     );
+
 
   const emergencyPhone =
     getStudentValue(
@@ -201,6 +211,7 @@ export default function StudentIDCard({
       'emergency_contact_phone',
       'emergencyContactPhone'
     ) || 'Not provided';
+
 
   /*
    * ============================================================
@@ -215,9 +226,10 @@ export default function StudentIDCard({
       'photoUrl'
     );
 
+
   /*
    * ============================================================
-   * DATES
+   * DATE OF BIRTH
    * ============================================================
    */
 
@@ -229,26 +241,12 @@ export default function StudentIDCard({
       'dateOfBirthGregorian'
     );
 
-  const dateOfBirthEthiopianYear =
-    getStudentValue(
-      student,
-      'date_of_birth_ethiopian_year',
-      'dateOfBirthEthiopianYear'
-    );
 
-  const dateOfBirthEthiopianMonth =
-    getStudentValue(
-      student,
-      'date_of_birth_ethiopian_month',
-      'dateOfBirthEthiopianMonth'
-    );
-
-  const dateOfBirthEthiopianDay =
-    getStudentValue(
-      student,
-      'date_of_birth_ethiopian_day',
-      'dateOfBirthEthiopianDay'
-    );
+  /*
+   * ============================================================
+   * ISSUE DATE
+   * ============================================================
+   */
 
   const issueDateGregorian =
     getStudentValue(
@@ -260,12 +258,14 @@ export default function StudentIDCard({
       'createdAt'
     );
 
+
   const issueDateEthiopianYear =
     getStudentValue(
       student,
       'issue_date_ethiopian_year',
       'issueDateEthiopianYear'
     );
+
 
   const issueDateEthiopianMonth =
     getStudentValue(
@@ -274,12 +274,20 @@ export default function StudentIDCard({
       'issueDateEthiopianMonth'
     );
 
+
   const issueDateEthiopianDay =
     getStudentValue(
       student,
       'issue_date_ethiopian_day',
       'issueDateEthiopianDay'
     );
+
+
+  /*
+   * ============================================================
+   * EXPIRY DATE
+   * ============================================================
+   */
 
   const expiryDateGregorian =
     getStudentValue(
@@ -289,12 +297,14 @@ export default function StudentIDCard({
       'expiryDate'
     );
 
+
   const expiryDateEthiopianYear =
     getStudentValue(
       student,
       'expiry_date_ethiopian_year',
       'expiryDateEthiopianYear'
     );
+
 
   const expiryDateEthiopianMonth =
     getStudentValue(
@@ -303,6 +313,7 @@ export default function StudentIDCard({
       'expiryDateEthiopianMonth'
     );
 
+
   const expiryDateEthiopianDay =
     getStudentValue(
       student,
@@ -310,9 +321,10 @@ export default function StudentIDCard({
       'expiryDateEthiopianDay'
     );
 
+
   /*
    * ============================================================
-   * QR
+   * QR CODE
    * ============================================================
    */
 
@@ -324,9 +336,10 @@ export default function StudentIDCard({
         qr?.token ||
         '';
 
+
   /*
    * ============================================================
-   * DISPLAY HELPERS
+   * DISPLAY VALUES
    * ============================================================
    */
 
@@ -339,36 +352,51 @@ export default function StudentIDCard({
     )
     .join('');
 
-  const dobDisplay = formatDateWithEthiopian(
-    dateOfBirthGregorian,
-    dateOfBirthEthiopianYear,
-    dateOfBirthEthiopianMonth,
-    dateOfBirthEthiopianDay
-  );
 
-  const issueDisplay = formatDateWithEthiopian(
-    issueDateGregorian,
-    issueDateEthiopianYear,
-    issueDateEthiopianMonth,
-    issueDateEthiopianDay
-  );
+  const dobDisplay =
+    formatDate(
+      dateOfBirthGregorian
+    );
 
-  const expiryDisplay = formatDateWithEthiopian(
-    expiryDateGregorian,
-    expiryDateEthiopianYear,
-    expiryDateEthiopianMonth,
-    expiryDateEthiopianDay
-  );
+
+  const issueDisplay =
+    formatDateWithEthiopian(
+      issueDateGregorian,
+      issueDateEthiopianYear,
+      issueDateEthiopianMonth,
+      issueDateEthiopianDay
+    );
+
+
+  const expiryDisplay =
+    formatDateWithEthiopian(
+      expiryDateGregorian,
+      expiryDateEthiopianYear,
+      expiryDateEthiopianMonth,
+      expiryDateEthiopianDay
+    );
+
+
+  /*
+   * ============================================================
+   * RENDER
+   * ============================================================
+   */
 
   return (
     <div className="digital-id-page">
+
       <div className="digital-id-container">
+
 
         {/* =====================================================
             FRONT OF CARD
             ===================================================== */}
 
         <div className="aegis-print-card aegis-front-card">
+
+
+          {/* HEADER */}
 
           <div className="aegis-front-top">
 
@@ -379,16 +407,19 @@ export default function StudentIDCard({
               </div>
 
               <div>
+
                 <div className="aegis-card-brand-name">
                   AEGIS ID
                 </div>
 
                 <div className="aegis-card-brand-subtitle">
-                  DIGITAL CAMPUS ACCESS
+                  DIGITAL CAMPUS ACCESS / ዲጂታል የካምፓስ መታወቂያ
                 </div>
+
               </div>
 
             </div>
+
 
             <div className="aegis-edu-heading">
 
@@ -397,15 +428,22 @@ export default function StudentIDCard({
               </strong>
 
               <span>
-                STUDENT IDENTIFICATION CARD
+                የኢትዮጵያ መከላከያ ዩኒቨርሲቲ
               </span>
+
+              <small>
+                STUDENT IDENTIFICATION CARD / የተማሪ መታወቂያ
+              </small>
 
             </div>
 
           </div>
 
 
+          {/* MAIN FRONT AREA */}
+
           <div className="aegis-front-main">
+
 
             {/* PHOTO */}
 
@@ -414,18 +452,23 @@ export default function StudentIDCard({
               <div className="aegis-photo-large">
 
                 {photoUrl ? (
+
                   <img
                     src={photoUrl}
                     alt={`${fullNameEn} student`}
                   />
+
                 ) : (
+
                   <div className="aegis-photo-letter">
                     {initials || 'S'}
                   </div>
+
                 )}
 
+
                 <div className="aegis-photo-strip">
-                  EDU STUDENT
+                  EDU STUDENT / የኢዲዩ ተማሪ
                 </div>
 
               </div>
@@ -433,9 +476,10 @@ export default function StudentIDCard({
             </div>
 
 
-            {/* IDENTITY */}
+            {/* INFORMATION */}
 
             <div className="aegis-identity-column">
+
 
               {/* NAME */}
 
@@ -463,7 +507,7 @@ export default function StudentIDCard({
               <div className="aegis-student-number">
 
                 <span>
-                  STUDENT ID NUMBER
+                  STUDENT ID / የተማሪ መታወቂያ
                 </span>
 
                 <strong>
@@ -473,54 +517,12 @@ export default function StudentIDCard({
               </div>
 
 
-              {/* FIELDS */}
+              {/* FRONT INFORMATION GRID */}
 
               <div className="aegis-front-fields">
 
-                <div className="aegis-front-field">
 
-                  <span>
-                    CATEGORY / ምድብ
-                  </span>
-
-                  <strong title={categoryEn}>
-                    {categoryEn}
-                  </strong>
-
-                  {categoryAm && (
-                    <small>
-                      {categoryAm}
-                    </small>
-                  )}
-
-                </div>
-
-
-                <div className="aegis-front-field">
-
-                  <span>
-                    DEPARTMENT
-                  </span>
-
-                  <strong title={department}>
-                    {department}
-                  </strong>
-
-                </div>
-
-
-                <div className="aegis-front-field">
-
-                  <span>
-                    YEAR LEVEL
-                  </span>
-
-                  <strong>
-                    {yearLevel}
-                  </strong>
-
-                </div>
-
+                {/* GENDER */}
 
                 <div className="aegis-front-field">
 
@@ -541,6 +543,8 @@ export default function StudentIDCard({
                 </div>
 
 
+                {/* BLOOD GROUP */}
+
                 <div className="aegis-front-field">
 
                   <span>
@@ -560,10 +564,12 @@ export default function StudentIDCard({
                 </div>
 
 
+                {/* DATE OF BIRTH */}
+
                 <div className="aegis-front-field">
 
                   <span>
-                    DATE OF BIRTH
+                    DATE OF BIRTH / የትውልድ ቀን
                   </span>
 
                   <strong>
@@ -573,23 +579,56 @@ export default function StudentIDCard({
                 </div>
 
 
+                {/* CATEGORY */}
+
                 <div className="aegis-front-field">
 
                   <span>
-                    RESIDENT ADDRESS
+                    CATEGORY / ምድብ
                   </span>
 
-                  <strong title={residentAddressEn}>
-                    {residentAddressEn}
+                  <strong title={categoryEn}>
+                    {categoryEn}
                   </strong>
 
-                  {residentAddressAm && (
-                    <small title={residentAddressAm}>
-                      {residentAddressAm}
+                  {categoryAm && (
+                    <small>
+                      {categoryAm}
                     </small>
                   )}
 
                 </div>
+
+
+                {/* DEPARTMENT */}
+
+                <div className="aegis-front-field">
+
+                  <span>
+                    DEPARTMENT / የትምህርት ክፍል
+                  </span>
+
+                  <strong title={department}>
+                    {department}
+                  </strong>
+
+                </div>
+
+
+                {/* YEAR LEVEL */}
+
+                <div className="aegis-front-field">
+
+                  <span>
+                    YEAR LEVEL / የትምህርት ደረጃ
+                  </span>
+
+                  <strong>
+                    {yearLevel}
+                  </strong>
+
+                </div>
+
 
               </div>
 
@@ -598,10 +637,11 @@ export default function StudentIDCard({
 
               <div className="aegis-date-row">
 
+
                 <div>
 
                   <span>
-                    ISSUE DATE
+                    ISSUE DATE / የተሰጠበት ቀን
                   </span>
 
                   <strong>
@@ -614,7 +654,7 @@ export default function StudentIDCard({
                 <div>
 
                   <span>
-                    EXPIRY DATE
+                    EXPIRY DATE / የሚያበቃበት ቀን
                   </span>
 
                   <strong>
@@ -623,12 +663,16 @@ export default function StudentIDCard({
 
                 </div>
 
+
               </div>
+
 
             </div>
 
           </div>
 
+
+          {/* FRONT FOOTER */}
 
           <div className="aegis-front-bottom">
 
@@ -637,10 +681,12 @@ export default function StudentIDCard({
               <ShieldCheck size={13} />
 
               <span>
-                AUTHORIZED CAMPUS IDENTIFICATION
+                AUTHORIZED CAMPUS IDENTIFICATION /
+                ህጋዊ የካምፓስ መታወቂያ
               </span>
 
             </div>
+
 
             <div className="aegis-card-validity">
               AEGIS ID • EDU
@@ -662,6 +708,9 @@ export default function StudentIDCard({
 
         <div className="aegis-print-card aegis-back-card">
 
+
+          {/* BACK HEADER */}
+
           <div className="aegis-back-top">
 
             <div className="aegis-back-brand">
@@ -677,7 +726,8 @@ export default function StudentIDCard({
                 </strong>
 
                 <span>
-                  ETHIOPIAN DEFENCE UNIVERSITY
+                  ETHIOPIAN DEFENCE UNIVERSITY /
+                  የኢትዮጵያ መከላከያ ዩኒቨርሲቲ
                 </span>
 
               </div>
@@ -686,15 +736,21 @@ export default function StudentIDCard({
 
 
             <div className="aegis-back-card-type">
-              STUDENT ACCESS CARD
+              STUDENT ACCESS CARD / የተማሪ መግቢያ ካርድ
             </div>
 
           </div>
 
 
+          {/* BACK MAIN */}
+
           <div className="aegis-back-main">
 
+
+            {/* LEFT SIDE */}
+
             <div className="aegis-back-details">
+
 
               {/* STUDENT CONTACT */}
 
@@ -704,17 +760,18 @@ export default function StudentIDCard({
 
                   <Phone size={12} />
 
-                  STUDENT CONTACT
+                  STUDENT CONTACT / የተማሪ ግንኙነት
 
                 </div>
 
 
                 <div className="aegis-back-contact-grid">
 
+
                   <div>
 
                     <span>
-                      PHONE NUMBER
+                      PHONE NUMBER / ስልክ ቁጥር
                     </span>
 
                     <strong>
@@ -727,7 +784,7 @@ export default function StudentIDCard({
                   <div>
 
                     <span>
-                      STUDENT ID
+                      STUDENT ID / የተማሪ መታወቂያ
                     </span>
 
                     <strong>
@@ -736,50 +793,6 @@ export default function StudentIDCard({
 
                   </div>
 
-                </div>
-
-              </div>
-
-
-              {/* PERSONAL DETAILS */}
-
-              <div className="aegis-back-section">
-
-                <div className="aegis-back-section-heading">
-
-                  <UserRound size={12} />
-
-                  PERSONAL DETAILS
-
-                </div>
-
-
-                <div className="aegis-back-contact-grid">
-
-                  <div>
-
-                    <span>
-                      GENDER
-                    </span>
-
-                    <strong>
-                      {genderEn}
-                    </strong>
-
-                  </div>
-
-
-                  <div>
-
-                    <span>
-                      BLOOD GROUP
-                    </span>
-
-                    <strong>
-                      {bloodGroupEn}
-                    </strong>
-
-                  </div>
 
                 </div>
 
@@ -794,17 +807,18 @@ export default function StudentIDCard({
 
                   <Phone size={12} />
 
-                  EMERGENCY CONTACT
+                  EMERGENCY CONTACT / የአደጋ ጊዜ ግንኙነት
 
                 </div>
 
 
                 <div className="aegis-emergency-grid">
 
+
                   <div>
 
                     <span>
-                      NAME
+                      CONTACT NAME / የግንኙነት ስም
                     </span>
 
                     <strong title={emergencyNameEn}>
@@ -823,7 +837,7 @@ export default function StudentIDCard({
                   <div>
 
                     <span>
-                      PHONE
+                      PHONE / ስልክ
                     </span>
 
                     <strong>
@@ -831,6 +845,7 @@ export default function StudentIDCard({
                     </strong>
 
                   </div>
+
 
                 </div>
 
@@ -845,7 +860,7 @@ export default function StudentIDCard({
 
                   <Building2 size={12} />
 
-                  UNIVERSITY INFORMATION
+                  UNIVERSITY INFORMATION / የዩኒቨርሲቲ መረጃ
 
                 </div>
 
@@ -854,13 +869,15 @@ export default function StudentIDCard({
                   Ethiopian Defence University
                 </strong>
 
-                <span>
-                  Aegis ID Campus Access System
-                </span>
 
                 <span>
-                  Student identification and
-                  campus access management
+                  የኢትዮጵያ መከላከያ ዩኒቨርሲቲ
+                </span>
+
+
+                <span>
+                  Aegis ID Campus Access System /
+                  የካምፓስ መታወቂያ ስርዓት
                 </span>
 
               </div>
@@ -868,44 +885,58 @@ export default function StudentIDCard({
             </div>
 
 
-            {/* QR CODE */}
+            {/* RIGHT SIDE QR */}
 
             <div className="aegis-back-qr">
 
+
               <div className="aegis-qr-label">
-                SCAN FOR CAMPUS ACCESS
+                SCAN FOR CAMPUS ACCESS / ለካምፓስ መግቢያ ይቃኙ
               </div>
 
 
               <div className="aegis-qr-box aegis-qr-box-large">
 
                 {qrLoading ? (
+
                   <div className="aegis-qr-loading">
                     Loading QR...
                   </div>
+
                 ) : qrValue ? (
+
                   <QRCodeSVG
                     value={qrValue}
                     size={190}
                     level="H"
                     includeMargin={true}
                   />
+
                 ) : (
+
                   <div className="aegis-qr-loading">
                     QR unavailable
                   </div>
+
                 )}
 
               </div>
 
 
               <strong>
-                AUTHORIZED SCANNER
+                AUTHORIZED SCANNER / የተፈቀደ ስካነር
               </strong>
+
 
               <span>
                 Present this QR code at an authorized
                 campus gateway.
+              </span>
+
+
+              <span>
+                በተፈቀደ የካምፓስ መግቢያ ላይ
+                ይህንን QR ኮድ ያቅርቡ።
               </span>
 
             </div>
@@ -917,6 +948,7 @@ export default function StudentIDCard({
 
           <div className="aegis-back-bottom">
 
+
             <div className="aegis-back-instruction">
 
               <ScanLine size={16} />
@@ -924,12 +956,17 @@ export default function StudentIDCard({
               <div>
 
                 <strong>
-                  SCANNING INSTRUCTIONS
+                  SCANNING INSTRUCTIONS / የመቃኘት መመሪያ
                 </strong>
 
                 <span>
                   Keep the QR code visible when presenting
                   your student card at a campus gateway.
+                </span>
+
+                <span>
+                  በካምፓስ መግቢያ ላይ የተማሪ ካርድዎን
+                  ሲያቀርቡ QR ኮዱ በግልጽ እንዲታይ ያድርጉ።
                 </span>
 
               </div>
@@ -944,16 +981,18 @@ export default function StudentIDCard({
                 <CalendarDays size={11} />
 
                 <span>
-                  CARD VALIDITY
+                  CARD VALIDITY / የካርድ ትክክለኛነት
                 </span>
 
               </div>
 
+
               <strong>
-                {expiryDisplay}
+                {issueDisplay} — {expiryDisplay}
               </strong>
 
             </div>
+
 
           </div>
 
